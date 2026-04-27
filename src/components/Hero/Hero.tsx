@@ -67,9 +67,8 @@ export default function Hero() {
   return (
     <section className={styles.hero} ref={heroRef} id="hero">
       {/* Background Orbs */}
-      <div className={styles.orbGreen} aria-hidden="true" />
-      <div className={styles.orbLime} aria-hidden="true" />
-      <div className={styles.gridPattern} aria-hidden="true" />
+      <div className={styles.orbPink} aria-hidden="true" />
+      <div className={styles.orbYellow} aria-hidden="true" />
 
       <div className="container">
         <div className={styles.heroInner}>
@@ -165,15 +164,15 @@ export default function Hero() {
               {/* Floating badges */}
               <div className={`${styles.floatingBadge} ${styles.badgeTopLeft}`}>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <circle cx="9" cy="9" r="9" fill="rgba(0,200,150,0.15)" />
-                  <path d="M5 9l3 3 5-5" stroke="var(--lotus-green)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="9" cy="9" r="9" fill="rgba(217,133,243,0.15)" />
+                  <path d="M5 9l3 3 5-5" stroke="var(--lotus-pink)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span>Strategy-Led</span>
               </div>
               <div className={`${styles.floatingBadge} ${styles.badgeBottomRight}`}>
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <circle cx="9" cy="9" r="9" fill="rgba(198,241,53,0.15)" />
-                  <path d="M9 4v5l3 3" stroke="var(--lotus-lime)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="9" cy="9" r="9" fill="rgba(255,216,77,0.2)" />
+                  <path d="M9 4v5l3 3" stroke="var(--lotus-yellow)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span>Client Portal Included</span>
               </div>
