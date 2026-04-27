@@ -165,94 +165,104 @@ function confirmationEmailHtml(name: string): string {
 
 /* ── POST handler ── */
 export async function POST(request: Request): Promise<Response> {
-  let body: Record<string, unknown>;
+  // ── Step 1: confirm the route is being reached ──
+  console.log("=== /api/contact POST hit ===");
+  console.log("Has RESEND_API_KEY:", Boolean(process.env.RESEND_API_KEY));
+  console.log("CONTACT_TO_EMAIL  :", process.env.CONTACT_TO_EMAIL);
+  console.log("CONTACT_FROM_EMAIL:", process.env.CONTACT_FROM_EMAIL);
 
+  // ── Step 2: parse body ──
+  let body: Record<string, unknown>;
   try {
     body = await request.json();
   } catch {
+    console.error("Failed to parse request body as JSON");
     return Response.json({ error: "Invalid request body." }, { status: 400 });
   }
 
-  /* ── honeypot ── */
+  // ── Step 3: honeypot ──
   const honeypot = sanitise(body.company_website_check);
   if (honeypot) {
-    // Looks like a bot — return a convincing 200 without sending
+    console.log("Honeypot triggered — silently discarding submission");
     return Response.json({ success: true });
   }
 
-  /* ── required field validation ── */
-  const name = sanitise(body.name, 100);
-  const email = sanitise(body.email, 254);
+  // ── Step 4: required field validation ──
+  const name    = sanitise(body.name, 100);
+  const email   = sanitise(body.email, 254);
   const message = sanitise(body.message, 3000);
 
   const errors: string[] = [];
-  if (!name) errors.push("Name is required.");
-  if (!email) errors.push("Email is required.");
+  if (!name)                        errors.push("Name is required.");
+  if (!email)                       errors.push("Email is required.");
   if (email && !isValidEmail(email)) errors.push("Email address is invalid.");
-  if (!message) errors.push("Message is required.");
+  if (!message)                     errors.push("Message is required.");
 
   if (errors.length > 0) {
+    console.warn("Validation failed:", errors);
     return Response.json({ error: errors.join(" ") }, { status: 422 });
   }
 
-  /* ── optional fields ── */
-  const businessName = sanitise(body.businessName, 150);
-  const businessType = sanitise(body.businessType, 80);
-  const website = sanitise(body.website, 300);
+  // ── Step 5: optional fields ──
+  const businessName  = sanitise(body.businessName, 150);
+  const businessType  = sanitise(body.businessType, 80);
+  const website       = sanitise(body.website, 300);
   const websiteStatus = sanitise(body.websiteStatus, 80);
-  const projectType = sanitise(body.projectType, 80);
+  const projectType   = sanitise(body.projectType, 80);
 
-  /* ── env vars ── */
-  const toEmail = process.env.CONTACT_TO_EMAIL;
-  const fromEmail =
-    process.env.CONTACT_FROM_EMAIL ?? "Lotus Digital <onboarding@resend.dev>";
+  // ── Step 6: env vars ──
+  const toEmail   = process.env.CONTACT_TO_EMAIL;
+  const fromEmail = process.env.CONTACT_FROM_EMAIL ?? "Lotus Digital <onboarding@resend.dev>";
 
   if (!toEmail) {
-    console.error("CONTACT_TO_EMAIL is not set in environment variables.");
-    return Response.json(
-      { error: "Server configuration error." },
-      { status: 500 }
-    );
+    console.error("CONTACT_TO_EMAIL is not set — cannot send email");
+    return Response.json({ error: "Server configuration error." }, { status: 500 });
   }
 
-  /* ── send emails ── */
-  // Instantiate here (not at module level) so Next.js build doesn't throw
-  // when RESEND_API_KEY is not yet set in the environment.
+  // ── Step 7: instantiate Resend and send emails ──
+  // Instantiated here (not at module level) so the build doesn't throw when
+  // RESEND_API_KEY is absent from .env.local.
   const resend = new Resend(process.env.RESEND_API_KEY);
 
-  try {
-    // 1 — Notification to the owner
-    await resend.emails.send({
-      from: fromEmail,
-      to: toEmail,
-      replyTo: email,
-      subject: `New Enquiry from ${name} — Lotus Digital`,
-      html: ownerEmailHtml({
-        name,
-        email,
-        businessName,
-        businessType,
-        website,
-        websiteStatus,
-        projectType,
-        message,
-      }),
-    });
+  // 7a — Owner notification
+  console.log("Sending owner notification to:", toEmail);
+  const { data: ownerData, error: ownerError } = await resend.emails.send({
+    from:    fromEmail,
+    to:      toEmail,
+    replyTo: email,
+    subject: `New Enquiry from ${name} — Lotus Digital`,
+    html:    ownerEmailHtml({ name, email, businessName, businessType, website, websiteStatus, projectType, message }),
+  });
 
-    // 2 — Confirmation to the submitter
-    await resend.emails.send({
-      from: fromEmail,
-      to: email,
-      subject: "We've received your request — Lotus Digital",
-      html: confirmationEmailHtml(name),
-    });
+  console.log("Owner email — data :", ownerData);
+  console.log("Owner email — error:", ownerError);
 
-    return Response.json({ success: true });
-  } catch (err) {
-    console.error("Resend error:", err);
+  if (ownerError) {
+    console.error("Resend rejected owner email:", ownerError);
     return Response.json(
-      { error: "Failed to send email. Please try again." },
+      { success: false, error: ownerError },
       { status: 500 }
     );
   }
+
+  // 7b — Confirmation to submitter
+  console.log("Sending confirmation to submitter:", email);
+  const { data: confirmData, error: confirmError } = await resend.emails.send({
+    from:    fromEmail,
+    to:      email,
+    subject: "We've received your request — Lotus Digital",
+    html:    confirmationEmailHtml(name),
+  });
+
+  console.log("Confirmation email — data :", confirmData);
+  console.log("Confirmation email — error:", confirmError);
+
+  if (confirmError) {
+    // Owner email already sent — log but don't fail the whole request
+    console.warn("Resend rejected confirmation email (non-fatal):", confirmError);
+  }
+
+  console.log("=== /api/contact success ===");
+  return Response.json({ success: true });
 }
+
