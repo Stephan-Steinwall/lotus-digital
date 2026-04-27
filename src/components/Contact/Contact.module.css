@@ -1,0 +1,192 @@
+.contact {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.bgDecor {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 60% at 100% 50%, rgba(0,200,150,0.07) 0%, transparent 60%),
+              radial-gradient(ellipse 40% 40% at 0% 80%, rgba(198,241,53,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 440px 1fr;
+  gap: 64px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* Info Side */
+.info {}
+.info .badge { margin-bottom: 20px; }
+.info h2 { margin-bottom: 16px; }
+.info > p { color: var(--text-secondary); margin-bottom: 32px; line-height: 1.75; }
+
+/* Guarantee Box */
+.guaranteeBox {
+  background: linear-gradient(135deg, rgba(198,241,53,0.08) 0%, rgba(198,241,53,0.03) 100%);
+  border: 1px solid rgba(198,241,53,0.18);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+.guaranteeIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  background: rgba(198,241,53,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.guaranteeTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--lotus-lime);
+  margin-bottom: 6px;
+}
+
+.guaranteeDesc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Contact Details */
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.detailIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(0,200,150,0.08);
+  border: 1px solid rgba(0,200,150,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Form Wrap */
+.formWrap {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: 48px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.submitBtn {
+  width: 100%;
+  justify-content: center;
+}
+
+.formNote {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: -4px;
+}
+
+/* Loading Spinner */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success State */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  gap: 16px;
+}
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(0,200,150,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.successState h3 {
+  font-size: 1.5rem;
+}
+
+.successState p {
+  color: var(--text-secondary);
+  max-width: 360px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .layout { grid-template-columns: 1fr; gap: 40px; }
+  .formWrap { padding: 32px; }
+}
+
+@media (max-width: 640px) {
+  .formRow { grid-template-columns: 1fr; }
+  .formWrap { padding: 24px; }
+}
