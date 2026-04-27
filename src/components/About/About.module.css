@@ -1,0 +1,240 @@
+.about {
+  background: #111111;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(191,247,71,0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* Left */
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.heading {
+  margin-top: 20px;
+  margin-bottom: 24px;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.12;
+}
+
+.intro {
+  font-size: 1.05rem;
+  color: rgba(244,244,244,0.65);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.body {
+  font-size: 0.92rem;
+  color: rgba(244,244,244,0.45);
+  line-height: 1.78;
+  margin-bottom: 40px;
+}
+
+.values {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.valueRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.valueDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #BFF747;
+  margin-top: 6px;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(191,247,71,0.4);
+}
+
+.valueLabel {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #F4F4F4;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.valueDesc {
+  font-size: 0.85rem;
+  color: rgba(244,244,244,0.42);
+  line-height: 1.6;
+}
+
+/* Right */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Profile Card */
+.profileCard {
+  background: #161616;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profileAvatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(191,247,71,0.15) 0%, rgba(191,247,71,0.05) 100%);
+  border: 2px solid rgba(191,247,71,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarInitial {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #BFF747;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.profileName {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #F4F4F4;
+}
+
+.profileRole {
+  font-size: 0.8rem;
+  color: rgba(244,244,244,0.4);
+  font-family: 'Inter', sans-serif;
+}
+
+.quote {
+  font-size: 0.92rem;
+  color: rgba(244,244,244,0.58);
+  line-height: 1.72;
+  font-style: italic;
+  padding: 16px 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.profileStats {
+  display: flex;
+  gap: 0;
+  align-items: center;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  text-align: center;
+}
+
+.stat strong {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #BFF747;
+}
+
+.stat span {
+  font-size: 0.72rem;
+  color: rgba(244,244,244,0.38);
+  font-family: 'Inter', sans-serif;
+}
+
+.statDivider {
+  width: 1px;
+  height: 36px;
+  background: rgba(255,255,255,0.07);
+}
+
+/* Commitment Card */
+.commitCard {
+  background: rgba(191,247,71,0.04);
+  border: 1px solid rgba(191,247,71,0.12);
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.commitIcon {
+  width: 40px;
+  height: 40px;
+  background: rgba(191,247,71,0.08);
+  border: 1px solid rgba(191,247,71,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.commitTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #F4F4F4;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.commitBody {
+  font-size: 0.83rem;
+  color: rgba(244,244,244,0.45);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .inner {
+    gap: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about::before { display: none; }
+}

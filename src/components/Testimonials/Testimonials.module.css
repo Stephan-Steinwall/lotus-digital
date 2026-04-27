@@ -1,0 +1,138 @@
+.testimonials {
+  background: #0C0C0C;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgDecor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(191,247,71,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+}
+
+/* Promise Grid */
+.promiseGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.promiseCard {
+  background: #0E0E0E;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: background 0.3s ease;
+}
+
+.promiseCard:hover {
+  background: #141414;
+}
+
+.promiseIcon {
+  font-size: 1.8rem;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.promiseTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #F4F4F4;
+  letter-spacing: -0.01em;
+}
+
+.promiseBody {
+  font-size: 0.85rem;
+  color: rgba(244,244,244,0.42);
+  line-height: 1.7;
+}
+
+/* Proof Bar */
+.proofBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 56px;
+  padding: 28px 40px;
+  background: rgba(191,247,71,0.03);
+  border: 1px solid rgba(191,247,71,0.1);
+  border-radius: 16px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.proofItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+  justify-content: center;
+}
+
+.proofText {
+  font-size: 0.9rem;
+  color: rgba(244,244,244,0.55);
+  font-family: 'Inter', sans-serif;
+}
+
+.proofText strong {
+  color: #F4F4F4;
+  font-weight: 600;
+}
+
+.proofDivider {
+  width: 1px;
+  height: 44px;
+  background: rgba(255,255,255,0.07);
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .promiseGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .promiseGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .proofBar {
+    flex-direction: column;
+    padding: 24px;
+    gap: 20px;
+  }
+
+  .proofDivider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .proofItem {
+    justify-content: flex-start;
+  }
+}

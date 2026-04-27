@@ -1,0 +1,222 @@
+.work {
+  background: #111111;
+  position: relative;
+  overflow: hidden;
+}
+
+.bgGlow {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(191,247,71,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.heading {
+  margin-top: 16px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+}
+
+.headerDesc {
+  max-width: 360px;
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: rgba(244,244,244,0.45);
+  flex-shrink: 0;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #141414;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.card:hover {
+  border-color: rgba(191,247,71,0.18);
+  background: #181818;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 40px rgba(191,247,71,0.05);
+}
+
+.card.featured {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: center;
+  gap: 48px;
+  background: rgba(191,247,71,0.03);
+  border-color: rgba(191,247,71,0.1);
+}
+
+.card.featured .cardInner {
+  flex: 1;
+}
+
+.card.featured .cardIcon {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  background: rgba(191,247,71,0.06);
+  border: 1px solid rgba(191,247,71,0.12);
+}
+
+.cardGlow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(191,247,71,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .cardGlow { opacity: 1; }
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.cardLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #BFF747;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #F4F4F4;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: rgba(244,244,244,0.48);
+  line-height: 1.7;
+}
+
+.cardTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: rgba(244,244,244,0.45);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 4px;
+  padding: 3px 10px;
+}
+
+.cardArrow {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(244,244,244,0.35);
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+}
+
+.card:hover .cardArrow {
+  background: #BFF747;
+  border-color: #BFF747;
+  color: #0C0C0C;
+  transform: rotate(45deg);
+}
+
+/* Note */
+.noteSm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  padding: 14px 20px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+}
+
+.noteSm span {
+  font-size: 0.8rem;
+  color: rgba(244,244,244,0.32);
+  line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .headerDesc { max-width: 100%; }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.featured {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
