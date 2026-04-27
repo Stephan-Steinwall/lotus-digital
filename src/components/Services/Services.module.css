@@ -56,6 +56,32 @@
 
 .card:hover::before { opacity: 1; }
 
+/* Coming Soon Card */
+.comingSoonCard {
+  opacity: 0.75;
+  position: relative;
+}
+
+.comingSoonCard:hover {
+  opacity: 0.9;
+}
+
+.comingSoonRibbon {
+  position: absolute;
+  top: 16px;
+  right: -28px;
+  background: linear-gradient(135deg, var(--lotus-lime), var(--lotus-lime-dark));
+  color: #0A0E0D;
+  font-size: 0.68rem;
+  font-weight: 800;
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 36px;
+  transform: rotate(45deg);
+  z-index: 1;
+}
+
 /* Card Header */
 .cardHeader {
   display: flex;

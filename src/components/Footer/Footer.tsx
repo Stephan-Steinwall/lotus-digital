@@ -37,15 +37,15 @@ const socials = [
 
 const footerLinks = {
   Services: [
-    "Conversion Web Design",
-    "Brand Strategy",
-    "CRO Consulting",
+    "Website Design & Redesign",
+    "Landing Pages",
     "Conversion Copywriting",
-    "Speed Audit",
-    "Sales Funnel Design",
+    "Website Speed & Performance",
+    "Brand Identity Basics",
+    "AI Automations (Coming Soon)",
   ],
-  Company: ["About Us", "Our Work", "Process", "Testimonials", "Blog"],
-  Resources: ["Free Audit", "Case Studies", "FAQ", "Contact"],
+  Company: ["About Us", "Sample Projects", "Our Process", "FAQ"],
+  Resources: ["Free Website Audit", "Contact Us"],
 };
 
 export default function Footer() {
@@ -59,10 +59,10 @@ export default function Footer() {
           <div className={styles.ctaInner}>
             <div>
               <h3 className={styles.ctaTitle}>
-                Ready to turn your site into a conversion machine?
+                Ready to improve your online presence?
               </h3>
               <p className={styles.ctaSub}>
-                Get your free audit today. No commitment, real insights.
+                Get your free website audit. No commitment, just honest feedback.
               </p>
             </div>
             <a
@@ -102,8 +102,8 @@ export default function Footer() {
                 <span className={styles.logoText}>Lotus<span className={styles.logoDot}>Digital</span></span>
               </Link>
               <p className={styles.tagline}>
-                We design digital experiences that guide visitors into becoming paying
-                customers — using strategy, clarity, and conversion-focused design.
+                A founder-led digital studio helping service businesses get more
+                inquiries through clear, modern, conversion-focused websites.
               </p>
               <div className={styles.socials}>
                 {socials.map((s) => (

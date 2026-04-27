@@ -8,49 +8,49 @@ const faqs = [
     id: "faq-1",
     question: "How is Lotus Digital different from other web design agencies?",
     answer:
-      "Most agencies optimize for how beautiful a site looks. We optimize for how well it converts. Every design decision — layout, copy placement, CTA language, color, spacing — is made with conversion psychology in mind. We don't deliver pretty portfolios; we deliver customer-generating systems.",
+      "We focus on websites that actually generate inquiries — not just ones that look good. We work closely with you throughout the process, keep things transparent in a shared client portal, and we're honest about what we can and can't do. We're a focused studio, not a large agency.",
   },
   {
     id: "faq-2",
     question: "What types of businesses do you work with?",
     answer:
-      "We specialize in service businesses: law firms, coaches, consultants, home services, healthcare practices, financial advisors, and agencies. We work best with businesses that have a proven offer and need their website to do a better job of communicating it.",
+      "We focus on service businesses — restaurants, gyms, fitness studios, real estate professionals, cleaning and home service companies, and other local or online service providers. These businesses rely on trust and leads, and that's exactly what we help with.",
   },
   {
     id: "faq-3",
     question: "How long does a typical project take?",
     answer:
-      "Most projects launch in 3–6 weeks from strategy kickoff to live site. Timeline depends on scope — a single landing page can be done in 1–2 weeks, while a full site with copywriting takes 4–8 weeks. We always set clear milestones upfront so there are no surprises.",
+      "Most projects are completed in 3–6 weeks from kickoff to launch. A single landing page can be ready in 1–2 weeks. A full website with copywriting typically takes 4–8 weeks. We'll set clear milestones at the start so you always know what to expect.",
   },
   {
     id: "faq-4",
     question: "Do you write the copy for the website?",
     answer:
-      "Yes — and we believe great copy is inseparable from great design. Our senior copywriter works alongside the designer from day one to ensure the words and visuals reinforce each other. Copy that converts requires an understanding of your customer's psychology, not just grammar.",
+      "Yes, conversion copywriting is one of our core services. We help craft clear, compelling copy that communicates your value and encourages visitors to reach out. You can also choose to handle copy yourself and have us focus on design and development.",
   },
   {
     id: "faq-5",
-    question: "What happens after the site launches?",
+    question: "What is the free website audit?",
     answer:
-      "Launch is just the beginning. We set up analytics tracking, establish baseline conversion metrics, and provide a post-launch optimization report at 30 days. For ongoing clients, we run A/B tests, monitor conversion rates, and make continuous improvements as data comes in.",
+      "The free audit is a genuine review of your current website — we look at your messaging, layout, mobile experience, speed, and conversion paths. You'll receive honest, specific feedback on what's working and what could be improved. There's no obligation to work with us after.",
   },
   {
     id: "faq-6",
-    question: "How do you measure success?",
+    question: "What are your prices?",
     answer:
-      "Simple: did conversions go up? We establish clear KPIs at the start of each project — lead volume, conversion rate, revenue attributed — and measure our work against those. We're not interested in vanity metrics like bounce rate or time-on-page unless they correlate to revenue.",
+      "Pricing depends on the scope of the project. Starter websites and landing pages are available for smaller budgets, while full website redesigns with copywriting cost more. After the free audit, we provide a clear fixed-price quote — no hourly billing, no surprises.",
   },
   {
     id: "faq-7",
-    question: "What's included in the free audit?",
+    question: "What happens after the site launches?",
     answer:
-      "Our free conversion audit is a real 15–20 minute video walkthrough of your current site, covering: your above-the-fold messaging, CTA placement and language, trust signals, page speed, and mobile experience. You'll leave with at least 5 actionable insights you can implement immediately — whether you work with us or not.",
+      "After launch, we make sure everything is running correctly and set up basic analytics so you can see how visitors interact with your site. We're available for questions and offer ongoing support for updates and improvements.",
   },
   {
     id: "faq-8",
-    question: "What are your prices?",
+    question: "How do I get in touch?",
     answer:
-      "Projects typically range from $3,000 for a single landing page to $15,000+ for a full site with strategy and copywriting. We offer fixed-price quotes, not hourly billing, so you always know exactly what you're paying. We also offer monthly retainer options for ongoing CRO work.",
+      "The easiest way is to use the contact form below or email us directly at hello@lotusdigital.co. We respond within one business day. WhatsApp is also available after an initial inquiry.",
   },
 ];
 

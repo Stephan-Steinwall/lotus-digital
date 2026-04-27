@@ -20,11 +20,11 @@
 /* Steps Grid */
 .stepsGrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   position: relative;
   z-index: 1;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
 }
 
 .step {
@@ -111,6 +111,46 @@
   flex-shrink: 0;
 }
 
+/* Portal Banner */
+.portalBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  background: rgba(198,241,53,0.06);
+  border: 1px solid rgba(198,241,53,0.18);
+  border-radius: var(--radius-xl);
+  padding: 28px 36px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.portalIcon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background: rgba(198,241,53,0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portalText strong {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.portalText p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
 /* CTA Banner */
 .ctaBanner {
   background: linear-gradient(135deg, rgba(0,200,150,0.1) 0%, rgba(198,241,53,0.06) 100%);
@@ -152,6 +192,7 @@
   .stepsGrid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .connector { display: none; }
   .step { padding: 0; }
+  .portalBanner { flex-direction: column; }
 }
 
 @media (max-width: 768px) {
@@ -161,4 +202,5 @@
 
 @media (max-width: 640px) {
   .stepsGrid { grid-template-columns: 1fr; }
+  .portalBanner { padding: 20px; }
 }

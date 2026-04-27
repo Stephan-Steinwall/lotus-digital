@@ -4,92 +4,107 @@ import styles from "./Services.module.css";
 
 const services = [
   {
-    id: "conversion-design",
+    id: "web-design",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M4 22V14a10 10 0 0 1 20 0v8" stroke="var(--lotus-green)" strokeWidth="2" strokeLinecap="round"/>
-        <path d="M4 18h3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4zm20 0h-3a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4z" stroke="var(--lotus-green)" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="2" y="4" width="24" height="18" rx="3" stroke="var(--lotus-green)" strokeWidth="2"/>
+        <path d="M2 9h24" stroke="var(--lotus-green)" strokeWidth="2"/>
+        <circle cx="6" cy="6.5" r="1" fill="var(--lotus-green)"/>
+        <circle cx="10" cy="6.5" r="1" fill="var(--lotus-green)"/>
+        <circle cx="14" cy="6.5" r="1" fill="var(--lotus-green)"/>
       </svg>
     ),
-    label: "Most Popular",
-    title: "Conversion-First Web Design",
+    label: "Core Service",
+    title: "Website Design & Redesign",
     description:
-      "We craft every pixel with one goal: turning browsers into buyers. Psychology-backed layouts, strategic CTAs, and UX that guides your visitors to act.",
-    features: ["Landing pages", "Sales funnels", "Homepage redesign", "A/B testing"],
+      "We design clear, modern websites that reflect your brand and guide visitors toward taking action. Built mobile-first, fast, and ready to convert.",
+    features: ["Mobile-first responsive design", "Conversion-focused layouts", "Brand-aligned visual identity", "Performance optimised"],
     accent: "green",
+    comingSoon: false,
   },
   {
-    id: "brand-strategy",
+    id: "landing-pages",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="10" stroke="var(--lotus-lime)" strokeWidth="2"/>
-        <path d="M9 14l3 3 7-7" stroke="var(--lotus-lime)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M4 6h20M4 12h14M4 18h10" stroke="var(--lotus-lime)" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="22" cy="18" r="4" stroke="var(--lotus-lime)" strokeWidth="2"/>
+        <path d="M20.5 18l1 1 2-2" stroke="var(--lotus-lime)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    label: "Brand Building",
-    title: "Brand Strategy & Identity",
+    label: "High Impact",
+    title: "Landing Pages",
     description:
-      "A brand is more than a logo — it's your promise. We build visual identities and messaging that resonate, differentiate, and stick in your customers' minds.",
-    features: ["Logo & visual identity", "Brand messaging", "Style guides", "Positioning"],
+      "Focused, single-purpose pages designed to turn ad traffic and inquiries into leads. Built around one goal: getting your visitor to take action.",
+    features: ["Single goal focus", "Clear headline & CTA", "Trust signals & social proof", "A/B ready structure"],
     accent: "lime",
-  },
-  {
-    id: "cro",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M6 20l5-7 4 4 4-8 4 3" stroke="var(--lotus-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        <circle cx="22" cy="10" r="2" fill="var(--lotus-lime)" />
-      </svg>
-    ),
-    label: "Growth",
-    title: "Conversion Rate Optimization",
-    description:
-      "Your traffic is already there. We analyze, test, and iterate to squeeze every drop of value from your existing visitors — no extra ad spend required.",
-    features: ["Heatmap analysis", "User testing", "Copy optimization", "CRO audits"],
-    accent: "green",
+    comingSoon: false,
   },
   {
     id: "copywriting",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect x="4" y="6" width="20" height="16" rx="3" stroke="var(--lotus-lime)" strokeWidth="2"/>
-        <path d="M9 11h10M9 15h7" stroke="var(--lotus-lime)" strokeWidth="2" strokeLinecap="round"/>
+        <rect x="4" y="6" width="20" height="16" rx="3" stroke="var(--lotus-green)" strokeWidth="2"/>
+        <path d="M9 11h10M9 15h7" stroke="var(--lotus-green)" strokeWidth="2" strokeLinecap="round"/>
       </svg>
     ),
     label: "Words That Convert",
     title: "Conversion Copywriting",
     description:
-      "Design without words is just decoration. We write sharp, persuasive copy that speaks to your ideal customer's desires and drives them to take action.",
-    features: ["Homepage copy", "Sales page writing", "Email sequences", "Ad copy"],
-    accent: "lime",
+      "We help you communicate your value clearly. Copy that speaks to what your customers actually care about — and moves them to reach out.",
+    features: ["Homepage & service page copy", "Clear value proposition", "Tone of voice guidance", "Call-to-action writing"],
+    accent: "green",
+    comingSoon: false,
   },
   {
     id: "speed",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M14 4l-2 8h8l-8 12" stroke="var(--lotus-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M14 4l-2 8h8l-8 12" stroke="var(--lotus-lime)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
     label: "Performance",
-    title: "Speed & Performance Audit",
+    title: "Website Speed & Performance",
     description:
-      "Every second of load time costs you conversions. We audit, optimize, and supercharge your site's Core Web Vitals for blazing fast load times.",
-    features: ["Core Web Vitals", "Load time optimization", "SEO technical audit", "Image optimization"],
-    accent: "green",
+      "Slow websites lose visitors. We audit and improve your site&apos;s Core Web Vitals, load times, and mobile performance so you stop losing leads.",
+    features: ["Core Web Vitals audit", "Image & asset optimisation", "Mobile performance review", "Technical SEO check"],
+    accent: "lime",
+    comingSoon: false,
   },
   {
-    id: "funnel",
+    id: "brand-identity",
     icon: (
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M6 6h16l-6 8v7l-4-2v-5L6 6z" stroke="var(--lotus-lime)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        <circle cx="14" cy="14" r="10" stroke="var(--lotus-green)" strokeWidth="2"/>
+        <path d="M14 8v6l4 2" stroke="var(--lotus-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
     ),
-    label: "End-to-End",
-    title: "Sales Funnel Design",
+    label: "Brand Foundations",
+    title: "Brand Identity Basics",
     description:
-      "From the first click to the final purchase, we design complete funnels that nurture, persuade, and convert at every stage of the buyer journey.",
-    features: ["Lead capture pages", "Upsell sequences", "Thank-you pages", "Retargeting assets"],
+      "For businesses that need a visual foundation before the website. We help you establish a clear logo, colour palette, and brand style that looks professional.",
+    features: ["Logo design", "Colour palette & typography", "Basic brand style guide", "Consistent visual language"],
+    accent: "green",
+    comingSoon: false,
+  },
+  {
+    id: "ai-automations",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect x="6" y="6" width="16" height="16" rx="4" stroke="var(--lotus-lime)" strokeWidth="2"/>
+        <path d="M10 14h8M14 10v8" stroke="var(--lotus-lime)" strokeWidth="2" strokeLinecap="round"/>
+        <circle cx="10" cy="10" r="1.5" fill="var(--lotus-lime)"/>
+        <circle cx="18" cy="10" r="1.5" fill="var(--lotus-lime)"/>
+        <circle cx="10" cy="18" r="1.5" fill="var(--lotus-lime)"/>
+        <circle cx="18" cy="18" r="1.5" fill="var(--lotus-lime)"/>
+      </svg>
+    ),
+    label: "Coming Soon",
+    title: "AI Automations & Business Workflows",
+    description:
+      "We&apos;re working on a service that helps service businesses save time with smart automations — from lead follow-up to booking workflows. Join the waitlist.",
+    features: ["Lead follow-up automation", "Booking & scheduling flows", "CRM integration", "Notification systems"],
     accent: "lime",
+    comingSoon: true,
   },
 ];
 
@@ -98,14 +113,15 @@ export default function Services() {
     <section className={`section ${styles.services}`} id="services">
       <div className="container">
         <div className={`section-header center ${styles.header}`}>
-          <div className="badge badge-green badge-dot">What We Do</div>
+          <div className="badge badge-green badge-dot">What We Offer</div>
           <h2>
             Services Built Around{" "}
-            <span className="text-gradient">One Outcome</span>
+            <span className="text-gradient">Your Business Goals</span>
           </h2>
           <p>
-            Every service we offer traces back to a single north star: turning
-            your website into a system that consistently generates customers.
+            We focus on the services that matter most for service businesses:
+            a professional online presence, clear messaging, and a site that
+            actually generates inquiries.
           </p>
         </div>
 
@@ -113,10 +129,13 @@ export default function Services() {
           {services.map((service, i) => (
             <div
               key={service.id}
-              className={`${styles.card} ${styles[`accent-${service.accent}`]}`}
+              className={`${styles.card} ${styles[`accent-${service.accent}`]} ${service.comingSoon ? styles.comingSoonCard : ""}`}
               style={{ animationDelay: `${i * 0.08}s` }}
               id={`service-${service.id}`}
             >
+              {service.comingSoon && (
+                <div className={styles.comingSoonRibbon}>Coming Soon</div>
+              )}
               <div className={styles.cardHeader}>
                 <div className={`${styles.iconWrap} ${styles[`icon-${service.accent}`]}`}>
                   {service.icon}
@@ -137,13 +156,21 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className={`btn ${service.accent === "green" ? "btn-ghost" : "btn-outline"} btn-sm ${styles.cardBtn}`}
-                onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}>
-                Learn More
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
+              {!service.comingSoon && (
+                <a href="#contact" className={`btn ${service.accent === "green" ? "btn-ghost" : "btn-outline"} btn-sm ${styles.cardBtn}`}
+                  onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+                  Learn More
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+              )}
+              {service.comingSoon && (
+                <a href="#contact" className={`btn btn-outline btn-sm ${styles.cardBtn}`}
+                  onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}>
+                  Join the Waitlist
+                </a>
+              )}
             </div>
           ))}
         </div>

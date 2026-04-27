@@ -5,31 +5,45 @@ import styles from "./Process.module.css";
 const steps = [
   {
     number: "01",
-    title: "Discovery & Audit",
+    title: "Free Website Audit",
     description:
-      "We start with a deep-dive into your current site, audience, competitors, and business goals. Every decision we make is rooted in data, not guesses.",
-    details: ["Analytics review", "Heatmap analysis", "Competitor benchmarking", "Customer interviews"],
+      "We start by reviewing your current website and sharing honest, actionable feedback. No obligation, no sales pitch — just real insights into what&apos;s working and what isn&apos;t.",
+    details: ["Current site review", "Conversion gap analysis", "Mobile & speed check", "Clear written feedback"],
   },
   {
     number: "02",
-    title: "Strategy & Blueprint",
+    title: "Strategy & Scope",
     description:
-      "Before touching design, we map your conversion architecture — the exact path we want visitors to follow, and why each step matters.",
-    details: ["User journey mapping", "CTA strategy", "Information hierarchy", "Content planning"],
+      "If we move forward, we define the project scope, goals, and timeline together. You&apos;ll receive a clear, fixed-price quote — no hidden costs.",
+    details: ["Goal alignment", "Fixed-price proposal", "Clear milestones", "Project portal set up"],
   },
   {
     number: "03",
-    title: "Design & Build",
+    title: "Design Preview",
     description:
-      "Your site comes to life with precision-crafted design, pixel-perfect layouts, and seamless development — optimized for speed and performance.",
-    details: ["High-fidelity mockups", "Responsive development", "Performance optimization", "Copy integration"],
+      "Before any development begins, we create a visual design preview for your review. You&apos;ll see exactly what your site will look like before we build it.",
+    details: ["High-fidelity mockup", "Desktop & mobile views", "Feedback round", "Design sign-off"],
   },
   {
     number: "04",
-    title: "Launch & Optimize",
+    title: "Development",
     description:
-      "We don't just hand it over and disappear. We monitor, test, and continuously optimize your site to improve conversion rates over time.",
-    details: ["A/B testing", "Analytics setup", "Conversion monitoring", "Ongoing iteration"],
+      "We build your site using modern, fast web technology. Your project portal is updated throughout so you always know where things stand.",
+    details: ["Responsive development", "Performance optimised", "CMS setup (if needed)", "Progress updates"],
+  },
+  {
+    number: "05",
+    title: "Review & Revisions",
+    description:
+      "You review the live staging site and request any final changes. We want you to be fully happy before anything goes live.",
+    details: ["Staging site review", "Revision rounds included", "Final content check", "Launch preparation"],
+  },
+  {
+    number: "06",
+    title: "Launch & Support",
+    description:
+      "We launch your site and make sure everything is running smoothly. After launch, we&apos;re available to answer questions and help with updates.",
+    details: ["Go-live support", "Analytics setup", "Post-launch check-in", "Ongoing support available"],
   },
 ];
 
@@ -43,12 +57,11 @@ export default function Process() {
         <div className={`section-header center ${styles.header}`}>
           <div className="badge badge-lime">How We Work</div>
           <h2>
-            Our <span className="text-gradient">Proven Process</span> for
-            Maximum Conversions
+            A Clear Process <span className="text-gradient">From First Message to Launch</span>
           </h2>
           <p>
-            Four focused phases — each one designed to remove guesswork and
-            build a site that reliably converts visitors into customers.
+            Every client gets a simple project portal to track progress,
+            deliverables, and next steps — so you&apos;re never left guessing.
           </p>
         </div>
 
@@ -85,13 +98,28 @@ export default function Process() {
           ))}
         </div>
 
+        {/* Portal callout */}
+        <div className={styles.portalBanner}>
+          <div className={styles.portalIcon}>
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <rect x="3" y="5" width="22" height="18" rx="3" stroke="var(--lotus-lime)" strokeWidth="2"/>
+              <path d="M3 10h22" stroke="var(--lotus-lime)" strokeWidth="2"/>
+              <path d="M9 16h10M9 20h6" stroke="var(--lotus-lime)" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </div>
+          <div className={styles.portalText}>
+            <strong>Client Portal Included</strong>
+            <p>Every project includes access to a shared portal where you can track progress, review deliverables, and see what&apos;s coming next.</p>
+          </div>
+        </div>
+
         {/* CTA Banner */}
         <div className={styles.ctaBanner}>
           <div className={styles.ctaContent}>
-            <h3>Ready to see what your site is leaving on the table?</h3>
+            <h3>Ready to see what your site could be?</h3>
             <p>
-              Get a free, no-obligation conversion audit — we&apos;ll show you exactly
-              where you&apos;re losing customers and how to fix it.
+              Start with a free website audit — we&apos;ll share honest feedback
+              and a clear plan for improvement.
             </p>
           </div>
           <a
@@ -100,7 +128,7 @@ export default function Process() {
             id="process-cta"
             onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
           >
-            Claim Your Free Audit
+            Get Your Free Audit
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

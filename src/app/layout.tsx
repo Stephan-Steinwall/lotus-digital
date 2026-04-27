@@ -2,29 +2,31 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lotus Digital — Conversion-Focused Web Design Agency",
+  title: "Lotus Digital — Web Design for Service Businesses",
   description:
-    "Lotus Digital designs digital experiences that turn visitors into paying customers. Strategy, clarity, and conversion-focused design for service businesses.",
+    "Lotus Digital is a founder-led digital studio that helps restaurants, gyms, real estate professionals, and service businesses get more inquiries through clear, modern, conversion-focused websites.",
   keywords: [
-    "web design agency",
-    "conversion optimization",
+    "web design for service businesses",
+    "restaurant website design",
+    "gym website design",
+    "real estate website design",
+    "conversion-focused web design",
     "landing page design",
-    "digital agency",
-    "CRO",
-    "service business websites",
+    "small business web design",
+    "founder-led design studio",
   ],
   openGraph: {
-    title: "Lotus Digital — Conversion-Focused Web Design Agency",
+    title: "Lotus Digital — Web Design for Service Businesses",
     description:
-      "We design digital experiences that turn visitors into paying customers.",
+      "We help restaurants, gyms, real estate brands, and service businesses get more inquiries with clear, modern, conversion-focused websites.",
     type: "website",
     siteName: "Lotus Digital",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lotus Digital — Conversion-Focused Web Design Agency",
+    title: "Lotus Digital — Web Design for Service Businesses",
     description:
-      "We design digital experiences that turn visitors into paying customers.",
+      "We help restaurants, gyms, real estate brands, and service businesses get more inquiries with clear, modern, conversion-focused websites.",
   },
 };
 

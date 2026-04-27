@@ -4,47 +4,59 @@ import styles from "./Work.module.css";
 
 const projects = [
   {
-    id: "apex-hvac",
-    category: "Conversion Redesign",
-    title: "Apex HVAC Services",
-    result: "+280% lead gen",
-    description: "Complete homepage overhaul for a local HVAC company. Redesigned with clear value props, trust signals, and a dominant CTA above the fold.",
-    tags: ["Landing Page", "CRO", "Local Business"],
-    metric1: { label: "Conv. Rate", before: "1.2%", after: "4.6%" },
-    metric2: { label: "Leads/mo", before: "18", after: "69" },
+    id: "restaurant-concept",
+    category: "Concept Project",
+    title: "Restaurant Website Redesign Concept",
+    description:
+      "A sample redesign for a local restaurant — focused on showcasing the menu, atmosphere, and making it easy to reserve a table or place an order online.",
+    tags: ["Restaurant", "Web Design", "Mobile-First"],
+    highlights: [
+      "Clear above-the-fold CTA",
+      "Menu & gallery integration",
+      "Online booking prompt",
+    ],
     color: "green",
   },
   {
-    id: "nova-coaching",
-    category: "Sales Funnel",
-    title: "Nova Business Coaching",
-    result: "+520% discovery calls",
-    description: "Built a complete sales funnel — from opt-in page to application form — for a high-ticket business coaching offer. Strategy, copy, design, and dev.",
-    tags: ["Sales Funnel", "Copywriting", "High-Ticket"],
-    metric1: { label: "Page Views → Calls", before: "0.4%", after: "2.5%" },
-    metric2: { label: "Revenue Attributed", before: "$0", after: "$380k" },
+    id: "gym-concept",
+    category: "Concept Project",
+    title: "Gym Landing Page Concept",
+    description:
+      "A conversion-focused landing page for a gym or fitness studio — designed to drive trial sign-ups and membership inquiries with trust signals and clear offers.",
+    tags: ["Gym & Fitness", "Landing Page", "Lead Generation"],
+    highlights: [
+      "Strong headline & value prop",
+      "Membership offer section",
+      "Social proof & testimonial layout",
+    ],
     color: "lime",
   },
   {
-    id: "meridian-law",
-    category: "Brand + Web",
-    title: "Meridian Law Group",
-    result: "+195% qualified leads",
-    description: "Repositioned a law firm's brand and rebuilt their site to attract higher-value cases. New messaging, visual identity, and conversion-optimized service pages.",
-    tags: ["Brand Identity", "Web Design", "Professional Services"],
-    metric1: { label: "Lead Quality Score", before: "3.1", after: "7.8" },
-    metric2: { label: "Inquiry Value", before: "$2.1k", after: "$8.4k" },
+    id: "realestate-concept",
+    category: "Concept Project",
+    title: "Real Estate Lead Capture Concept",
+    description:
+      "A real estate professional&apos;s website designed around one goal: capturing buyer and seller leads. Listings, trust, and a clear path to booking a call.",
+    tags: ["Real Estate", "Lead Capture", "Professional Services"],
+    highlights: [
+      "Lead capture form above fold",
+      "Agent credibility section",
+      "Property listings integration",
+    ],
     color: "green",
   },
   {
-    id: "brightpath",
-    category: "E-Commerce CRO",
-    title: "BrightPath Supplements",
-    result: "+88% add-to-cart rate",
-    description: "CRO audit and redesign of product detail pages and checkout flow for a health supplement brand. Removed friction, added social proof, optimized the flow.",
-    tags: ["E-Commerce", "CRO", "Product Pages"],
-    metric1: { label: "Cart Abandonment", before: "78%", after: "51%" },
-    metric2: { label: "ROAS", before: "1.4x", after: "3.2x" },
+    id: "cleaning-concept",
+    category: "Concept Project",
+    title: "Cleaning Business Website Concept",
+    description:
+      "A simple, trustworthy website for a home or commercial cleaning business — designed to make getting a quote quick and easy, with clear service details.",
+    tags: ["Home Services", "Web Design", "Local Business"],
+    highlights: [
+      "Instant quote request form",
+      "Services & pricing section",
+      "Trust-building review section",
+    ],
     color: "lime",
   },
 ];
@@ -54,18 +66,19 @@ export default function Work() {
     <section className={`section ${styles.work}`} id="work">
       <div className="container">
         <div className={`section-header center ${styles.header}`}>
-          <div className="badge badge-green">Case Studies</div>
+          <div className="badge badge-green">Sample Projects</div>
           <h2>
-            Real Businesses, <span className="text-gradient">Real Results</span>
+            Sample Website <span className="text-gradient">Transformations</span>
           </h2>
           <p>
-            We don&apos;t just promise conversions — we deliver them. Here&apos;s what
-            happened when real clients trusted us with their growth.
+            These are examples of the type of work Lotus Digital can create for
+            your business. Each concept is tailored to a specific industry and
+            conversion goal.
           </p>
         </div>
 
         <div className={styles.grid}>
-          {projects.map((project, i) => (
+          {projects.map((project) => (
             <div
               key={project.id}
               className={`${styles.card} ${styles[`card-${project.color}`]}`}
@@ -85,11 +98,12 @@ export default function Work() {
                       <div className={styles.vbBtn} />
                     </div>
                   </div>
-                  <div className={styles.resultTag}>
+                  <div className={styles.conceptTag}>
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                      <path d="M2 10l3-4 3 2 3-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      <circle cx="7" cy="7" r="6" stroke="currentColor" strokeWidth="1.3"/>
+                      <path d="M7 4v3l2 2" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
-                    {project.result}
+                    Concept Example
                   </div>
                 </div>
               </div>
@@ -102,33 +116,17 @@ export default function Work() {
                 <h3 className={styles.cardTitle}>{project.title}</h3>
                 <p className={styles.cardDesc}>{project.description}</p>
 
-                {/* Metrics */}
-                <div className={styles.metrics}>
-                  <div className={styles.metric}>
-                    <div className={styles.metricLabel}>{project.metric1.label}</div>
-                    <div className={styles.metricRow}>
-                      <span className={styles.metricBefore}>{project.metric1.before}</span>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 8h10M9 4l4 4-4 4" stroke="var(--text-muted)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                {/* Highlights */}
+                <ul className={styles.highlights}>
+                  {project.highlights.map((h) => (
+                    <li key={h} className={styles.highlightItem}>
+                      <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+                        <path d="M2 6.5l3 3 6-6" stroke={project.color === "green" ? "var(--lotus-green)" : "var(--lotus-lime)"} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
-                      <span className={`${styles.metricAfter} ${project.color === "green" ? styles.afterGreen : styles.afterLime}`}>
-                        {project.metric1.after}
-                      </span>
-                    </div>
-                  </div>
-                  <div className={styles.metric}>
-                    <div className={styles.metricLabel}>{project.metric2.label}</div>
-                    <div className={styles.metricRow}>
-                      <span className={styles.metricBefore}>{project.metric2.before}</span>
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 8h10M9 4l4 4-4 4" stroke="var(--text-muted)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      <span className={`${styles.metricAfter} ${project.color === "green" ? styles.afterGreen : styles.afterLime}`}>
-                        {project.metric2.after}
-                      </span>
-                    </div>
-                  </div>
-                </div>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
 
                 {/* Tags */}
                 <div className={styles.tags}>
@@ -142,14 +140,14 @@ export default function Work() {
         </div>
 
         <div className={styles.bottomCta}>
-          <p>Want to see more? We have 100+ successful projects under our belt.</p>
+          <p>Ready to create something like this for your business?</p>
           <a
             href="#contact"
             className="btn btn-primary"
             id="work-cta"
             onClick={(e) => { e.preventDefault(); document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" }); }}
           >
-            Start Your Project
+            Get a Free Website Audit
           </a>
         </div>
       </div>

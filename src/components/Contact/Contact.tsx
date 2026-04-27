@@ -9,7 +9,6 @@ export default function Contact() {
     email: "",
     company: "",
     service: "",
-    budget: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -38,12 +37,13 @@ export default function Contact() {
           <div className={styles.info}>
             <div className="badge badge-green badge-dot">Get in Touch</div>
             <h2>
-              Let&apos;s Build Something That{" "}
-              <span className="text-gradient">Actually Converts</span>
+              Let&apos;s Talk About{" "}
+              <span className="text-gradient">Your Website</span>
             </h2>
             <p>
               Fill out the form and we&apos;ll get back to you within one business
-              day with a plan — not a sales pitch.
+              day. No sales pitch — just an honest conversation about your
+              business and how we can help.
             </p>
 
             <div className={styles.guaranteeBox}>
@@ -53,10 +53,10 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <div className={styles.guaranteeTitle}>Free Conversion Audit</div>
+                <div className={styles.guaranteeTitle}>Free Website Audit</div>
                 <p className={styles.guaranteeDesc}>
-                  Every project starts with a free audit of your current site. No
-                  obligation, no pitch — just real insights.
+                  Every enquiry starts with a free audit of your current site. No
+                  obligation, no pitch — just real, actionable insights.
                 </p>
               </div>
             </div>
@@ -73,19 +73,19 @@ export default function Contact() {
               <div className={styles.detail}>
                 <div className={styles.detailIcon}>
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <path d="M3 4.5A1.5 1.5 0 0 1 4.5 3h.879a1.5 1.5 0 0 1 1.415 1l.894 2.683a1.5 1.5 0 0 1-.424 1.578L6.5 9.5a10.07 10.07 0 0 0 2 2l1.239-.764a1.5 1.5 0 0 1 1.578-.424L14 11.206A1.5 1.5 0 0 1 15 12.621V13.5A1.5 1.5 0 0 1 13.5 15C7.701 15 3 10.299 3 4.5z" stroke="var(--lotus-green)" strokeWidth="1.3"/>
-                  </svg>
-                </div>
-                <span>+1 (555) 012-3456</span>
-              </div>
-              <div className={styles.detail}>
-                <div className={styles.detailIcon}>
-                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                     <circle cx="9" cy="8" r="2.5" stroke="var(--lotus-green)" strokeWidth="1.3"/>
                     <path d="M9 1a7 7 0 0 1 7 7c0 5-7 10-7 10S2 13 2 8a7 7 0 0 1 7-7z" stroke="var(--lotus-green)" strokeWidth="1.3"/>
                   </svg>
                 </div>
                 <span>Remote — serving clients worldwide</span>
+              </div>
+              <div className={styles.detail}>
+                <div className={styles.detailIcon}>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M15.5 12.5c-.3-.6-1.8-1.4-2.5-1.7-.5-.2-.7-.2-1 .2-.2.3-.7.9-.9 1.1-.2.2-.4.2-.7.1-.8-.4-2.1-1.3-2.9-2.1-.8-.8-1.6-2-2-2.7-.1-.3 0-.5.1-.7.2-.2.5-.5.7-.8.2-.3.2-.5.1-.8C6.1 4.3 5.2 2.8 4.7 2.5c-.3-.2-.6-.2-.9 0L3 3.3c-.7.7-.9 1.6-.5 2.5 1.1 2.7 3.5 5.5 6.2 6.6.9.4 1.8.2 2.5-.5l.7-.7c.3-.3.3-.7 0-.9l-.4-.3z" stroke="var(--lotus-green)" strokeWidth="1.3" strokeLinecap="round"/>
+                  </svg>
+                </div>
+                <span>WhatsApp available after inquiry</span>
               </div>
             </div>
           </div>
@@ -102,8 +102,9 @@ export default function Contact() {
                 </div>
                 <h3>We&apos;ve Got Your Message!</h3>
                 <p>
-                  Expect a reply from us within one business day. In the meantime,
-                  feel free to browse our case studies.
+                  Expect a reply from us within one business day. We&apos;ll start by
+                  reviewing your current website and come back to you with
+                  honest feedback.
                 </p>
               </div>
             ) : (
@@ -117,7 +118,7 @@ export default function Contact() {
                       type="text"
                       value={form.name}
                       onChange={handleChange}
-                      placeholder="James Harrington"
+                      placeholder="Your name"
                       required
                     />
                   </div>
@@ -129,7 +130,7 @@ export default function Contact() {
                       type="email"
                       value={form.email}
                       onChange={handleChange}
-                      placeholder="james@example.com"
+                      placeholder="you@example.com"
                       required
                     />
                   </div>
@@ -137,14 +138,14 @@ export default function Contact() {
 
                 <div className={styles.formRow}>
                   <div className={styles.formGroup}>
-                    <label htmlFor="contact-company" className={styles.label}>Company / Business</label>
+                    <label htmlFor="contact-company" className={styles.label}>Business Name</label>
                     <input
                       id="contact-company"
                       name="company"
                       type="text"
                       value={form.company}
                       onChange={handleChange}
-                      placeholder="Harrington Plumbing Co."
+                      placeholder="Your business name"
                     />
                   </div>
                   <div className={styles.formGroup}>
@@ -156,32 +157,16 @@ export default function Contact() {
                       onChange={handleChange}
                     >
                       <option value="">Select a service...</option>
-                      <option value="conversion-design">Conversion-First Web Design</option>
-                      <option value="brand-strategy">Brand Strategy & Identity</option>
-                      <option value="cro">Conversion Rate Optimization</option>
+                      <option value="website-design">Website Design & Redesign</option>
+                      <option value="landing-page">Landing Page</option>
                       <option value="copywriting">Conversion Copywriting</option>
-                      <option value="speed-audit">Speed & Performance Audit</option>
-                      <option value="funnel">Sales Funnel Design</option>
+                      <option value="speed-audit">Website Speed & Performance</option>
+                      <option value="brand-identity">Brand Identity Basics</option>
+                      <option value="ai-automations">AI Automations (Waitlist)</option>
                       <option value="audit-only">Just the Free Audit</option>
+                      <option value="not-sure">Not sure yet</option>
                     </select>
                   </div>
-                </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="contact-budget" className={styles.label}>Approximate Budget</label>
-                  <select
-                    id="contact-budget"
-                    name="budget"
-                    value={form.budget}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select budget range...</option>
-                    <option value="under-3k">Under $3,000</option>
-                    <option value="3k-7k">$3,000 – $7,000</option>
-                    <option value="7k-15k">$7,000 – $15,000</option>
-                    <option value="15k-plus">$15,000+</option>
-                    <option value="not-sure">Not sure yet</option>
-                  </select>
                 </div>
 
                 <div className={styles.formGroup}>
@@ -192,7 +177,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     rows={4}
-                    placeholder="What does your business do? What's your biggest challenge with your current website? What does success look like for you?"
+                    placeholder="What does your business do? What are you looking to improve with your website? Any specific goals or challenges?"
                     required
                   />
                 </div>

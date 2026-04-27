@@ -3,15 +3,48 @@
 import { useEffect, useRef } from "react";
 import styles from "./Hero.module.css";
 
-const stats = [
-  { value: "340%", label: "Avg Conversion Lift" },
-  { value: "120+", label: "Clients Served" },
-  { value: "98%", label: "Client Satisfaction" },
-  { value: "$12M+", label: "Revenue Generated" },
+const trustPillars = [
+  { label: "Conversion-focused strategy" },
+  { label: "Mobile-first design" },
+  { label: "Clear communication" },
+  { label: "Fast, organised delivery" },
 ];
 
-const trustedBy = [
-  "Clarity Studio", "Apex Services", "NovaCare", "Elevate Pro", "Meridian Co.", "BrightPath"
+const niches = [
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M3 11l9-9 9 9M5 9v10a1 1 0 001 1h4v-5h4v5h4a1 1 0 001-1V9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    label: "Restaurants",
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <line x1="4" y1="22" x2="4" y2="15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
+      </svg>
+    ),
+    label: "Gyms & Fitness Studios",
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+        <polyline points="9 22 9 12 15 12 15 22" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    label: "Real Estate Professionals",
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    ),
+    label: "Cleaning & Home Services",
+  },
 ];
 
 export default function Hero() {
@@ -43,21 +76,20 @@ export default function Hero() {
           {/* Left Content */}
           <div className={styles.heroContent}>
             <div className={`badge badge-green badge-dot ${styles.heroTag}`}>
-              Conversion-First Design Agency
+              Founder-Led Design Studio
             </div>
 
             <h1 className={styles.heroHeadline}>
-              We Turn Websites Into
+              Websites Designed to Turn
               <span className={`text-gradient ${styles.headlineAccent}`}>
-                {" "}Customer-Generating{" "}
+                {" "}Visitors Into Customers{" "}
               </span>
-              Machines
             </h1>
 
             <p className={styles.heroDescription}>
-              At Lotus Digital, we don&apos;t just build websites — we design digital
-              experiences that guide visitors into becoming paying customers, using
-              strategy, clarity, and conversion-focused design.
+              Lotus Digital helps restaurants, gyms, real estate brands, and
+              service businesses improve their online presence with clear,
+              modern, conversion-focused websites.
             </p>
 
             <div className={styles.heroActions}>
@@ -70,32 +102,34 @@ export default function Hero() {
                   document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                Get Your Free Audit
+                Get a Free Website Audit
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
               <a
-                href="#work"
+                href="#process"
                 className="btn btn-outline btn-lg"
                 id="hero-cta-secondary"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector("#work")?.scrollIntoView({ behavior: "smooth" });
+                  document.querySelector("#process")?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                See Our Work
+                See How It Works
               </a>
             </div>
 
-            {/* Trust Indicators */}
-            <div className={styles.trustSection}>
-              <p className={styles.trustLabel}>Trusted by service businesses across industries</p>
-              <div className={styles.trustedLogos}>
-                {trustedBy.map((name) => (
-                  <span key={name} className={styles.trustedLogo}>{name}</span>
-                ))}
-              </div>
+            {/* Trust Pillars */}
+            <div className={styles.trustPillars}>
+              {trustPillars.map((p) => (
+                <div key={p.label} className={styles.trustPill}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M2 7l3.5 3.5 6.5-7" stroke="var(--lotus-green)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  {p.label}
+                </div>
+              ))}
             </div>
           </div>
 
@@ -111,49 +145,18 @@ export default function Hero() {
                   <div className={styles.browserUrl}>lotusdigital.co</div>
                 </div>
                 <div className={styles.browserContent}>
-                  {/* Conversion Graph */}
-                  <div className={styles.conversionGraph}>
-                    <div className={styles.graphLabel}>Conversion Rate</div>
-                    <div className={styles.graphValue}>+340%</div>
-                    <div className={styles.graphBars}>
-                      {[30, 45, 38, 60, 55, 78, 92].map((h, i) => (
-                        <div
-                          key={i}
-                          className={styles.graphBar}
-                          style={{ height: `${h}%`, animationDelay: `${i * 0.1}s` }}
-                        />
+                  {/* Website preview lines */}
+                  <div className={styles.sitePreview}>
+                    <div className={styles.previewNav} />
+                    <div className={styles.previewHero}>
+                      <div className={styles.previewH} style={{ width: "70%" }} />
+                      <div className={styles.previewH} style={{ width: "50%", height: "10px", opacity: 0.5 }} />
+                      <div className={styles.previewBtn} />
+                    </div>
+                    <div className={styles.previewCards}>
+                      {[1,2,3].map(i => (
+                        <div key={i} className={styles.previewCard} />
                       ))}
-                    </div>
-                    <div className={styles.graphXlabels}>
-                      {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
-                        <span key={i}>{d}</span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Mini stat cards */}
-                  <div className={styles.miniStats}>
-                    <div className={styles.miniStat}>
-                      <div className={styles.miniStatIcon}>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path d="M8 2l1.5 4.5H14L10.5 9l1.5 4.5L8 11l-4 2.5L5.5 9 2 6.5h4.5L8 2z" fill="var(--lotus-lime)" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className={styles.miniStatValue}>2.4x</div>
-                        <div className={styles.miniStatLabel}>Lead Volume</div>
-                      </div>
-                    </div>
-                    <div className={styles.miniStat}>
-                      <div className={styles.miniStatIcon} style={{ background: "rgba(0,200,150,0.12)" }}>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                          <path d="M13 4L7 10L4 7" stroke="var(--lotus-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </div>
-                      <div>
-                        <div className={styles.miniStatValue} style={{ color: "var(--lotus-green)" }}>98%</div>
-                        <div className={styles.miniStatLabel}>Satisfaction</div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -172,20 +175,25 @@ export default function Hero() {
                   <circle cx="9" cy="9" r="9" fill="rgba(198,241,53,0.15)" />
                   <path d="M9 4v5l3 3" stroke="var(--lotus-lime)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
-                <span>Fast Delivery</span>
+                <span>Client Portal Included</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Stats Row */}
-        <div className={styles.statsRow}>
-          {stats.map((s) => (
-            <div key={s.label} className={styles.statItem}>
-              <div className={styles.statValue}>{s.value}</div>
-              <div className={styles.statLabel}>{s.label}</div>
-            </div>
-          ))}
+        {/* Niche Section */}
+        <div className={styles.nicheSection}>
+          <p className={styles.nicheLabel}>
+            Built for service businesses that rely on trust, leads, and local visibility.
+          </p>
+          <div className={styles.nicheGrid}>
+            {niches.map((n) => (
+              <div key={n.label} className={styles.nicheCard}>
+                <div className={styles.nicheIcon}>{n.icon}</div>
+                <span className={styles.nicheText}>{n.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
